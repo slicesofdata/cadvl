@@ -1,0 +1,14 @@
+---
+title: "<b>Project Management</b>" 
+# index to display header for the nested *.qmd files (even if in subdirectory); displays directory name otherwise
+#description: "Overview of Modules for PSYC 167"
+#author: ""
+#date: ""
+
+order: 0
+
+execute:
+  #enabled: false
+  freeze: auto
+---
+

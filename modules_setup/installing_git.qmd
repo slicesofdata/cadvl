@@ -1,0 +1,74 @@
+---
+title: "**Installing Git**"
+author: "Gabriel I. Cook"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+execute:
+  #enabled: false
+  freeze: auto  
+
+order: 2
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+restart_r_session = FALSE   # restart R in case of undefined objects  
+run_commonR = FALSE         # run the _common.R script
+source(here::here("src", "module_content", "module_readings_and_videos.R"))
+under_construction = FALSE # to present under_construction from above script
+```
+
+
+```{r}
+#| label: load-packages
+#| include: false
+```
+
+## **Overview**
+
+The Git software is use to collaborate and communicate with a remote file repository. We will perform all the necessary tasks for using Git with RStudio and managing files at the remote repository at GitHub. 
+
+### **To Do**
+
+Complete by the start of the first day of class. 
+
+1. Download Git (if not already installed)
+2. Install Git on your computer (if not already installed)
+3. Make note of where you installed it. If RStudio does not recognize `Git.exe` on its own, you will need to supply the directory path.
+
+Follow steps below to complete. 
+
+
+## **Installing Git**
+
+1. Do I need to install Git?
+
+     * Mac OS Users can check whether Git is already installed by typing `git --version` at the Mac Terminal. If a version number is returned, then Git is installed.
+
+     * Windows Users can press the Windows key (or click the Start button) and type Git in the search bar. If you see Git or Git Bash listed, then Git is installed. At the R console, you can also type `system("git --version")` and if it is installed, the function should return the version number.
+
+2. Download and Install Git (if necessary)
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+
+```
+
+     * Mac OS Users can open their Terminal and type `xcode-select --install`. If you do not know how to open a terminal, see [this link](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac). If that approach does not work, you can visit the [Git download site](https://git-scm.com/downloads) and follow instructions. If you try the Homebrew approach and experience problems, you may need to set a PATH variable. Students have reported to me that you do not need to do that. Instead, you can follow instructions to download the *binary version* referenced on the Git page.
+     * Windows Users can download the latest version of [Git here](https://git-scm.com/download/win). Download and install Git, making a note of where on your computer you are install it as you may need to locate the path for RStudio, especially if you use a portable version of Git.
+
+
+## **Git: What is Git? Why Go Through the Trouble?**
+
+Projects are rarely done without collaborators. Teams collaborate, leveraging team members' work and accomplishments. Using `R` in conjunction with the a distributed version control system, like Git, will facilitate that collaboration process. Writing flexible `R` code that does not hard-code objects will allow your research project to be reproducible, for example, when variables and data change (e.g., new data added, a new year added, etc.). Git long with GitHub will allow you to track your edits (the version control) and share your code with your collaborators or interested scholars. 
+
+Some benefits of using version control:
+
+- Makes reverting back to previous states easy. You can easily revert back to a previous version of your code in the event you discover errors or you delete critical details accidentally. 
+- Serves as a memory for edits when memory fails. All changes across different versions of your code or written content is available.  
+- Facilitates project sharing
+- Facilitates collaboration. Others can also report errors or suggest features to your project.
+
+RStudio integrates support for Git but this interface is a little clunky. You can use it but RStudio also allows for communication via the command line *Terminal*, which will be the preferred method shared here.
+
+All of the aforementioned benefits of Git will not experienced in this course. For your team project, the code lead will manage the repository on their own using the work contributed by the team. Although we will not cover much [branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell/) in this course, having some practice interacting with a remote repository is important for data science students and students pursuing graduate study that involves working with data. As such, you will manage your own repository for your personal class exercises. 
+
+

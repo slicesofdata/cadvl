@@ -1,0 +1,25 @@
+---
+title: "<b>Installation & Setup</b>" # index to display header for the nested *.qmd files (even if in subdirectory); displays directory name otherwise
+description: "Overview of Setting up R and RStudio for the Cognition and Data Visualization Lab"
+#author: ""
+#date: ""
+
+order: 0
+
+execute:
+  #enabled: false
+  freeze: auto
+---
+
+## Overview
+
+We will use the R programming language to manipulate data and create data visualizations. Although you may have a preferred IDE other than RStudio, my recommendation is to use RStudio. All instructions will assume you are using RStudio. For report documents, we will use the R Markdown language. [RStudio projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects) will be used for managing your work space in order to simplify your working directory and file paths, manage history, and your R Markdown files (e.g., .Rmd) and code script files (.R). These RStudio projects will be *version-control* projects maintained at a remote repository on [GitHub.com](https://github.com/). Finally, the Git program will be used to communicate with that remote repository. 
+
+
+## Setup Structure
+
+- Install R
+- Install RStudio
+- Create a GitHub account if you do not have one
+- Install Git if your computer system needs it (e.g., not installed) 
+

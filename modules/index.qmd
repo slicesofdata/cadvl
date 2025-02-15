@@ -1,0 +1,18 @@
+---
+title: "<b>Modules</b>" # index to display header for the nested *.qmd files (even if in subdirectory); displays directory name otherwise
+description: "Overview of modules for working with data."
+#author: ""
+#date: ""
+
+order: 0
+
+execute:
+  #enabled: false
+  freeze: auto
+---
+
+## Module structure
+
+In general, modules will contain examples, readings, and additional resources. The modules will be updated from time to time. 
+
+
