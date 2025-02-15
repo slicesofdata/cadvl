@@ -1,0 +1,79 @@
+---
+title: "**Cheatsheets Links**"
+author: "Gabriel I. Cook"
+#date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+execute:
+  #enabled: false
+  freeze: auto
+
+order: 15
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+restart_r_session <- FALSE   # restart R in case of undefined objects  
+run_commonR <- FALSE         # run the _common.R script
+source(here::here("src", "module_content", "module_readings_and_videos.R"))
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+no_proceed_to_install <- FALSE
+under_construction    <- FALSE # print a warning message
+source(here::here("src", "module_content", "module_call_outs.R"))
+```
+
+
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+library(knitr)
+
+# Define a function to get all PDF links
+get_all_pdf_links <- function(url) {
+  library(rvest)
+  
+  # Read the webpage
+  page <- try(read_html(url), silent = TRUE)
+  
+  # Handle the case where the URL isn't a valid webpage
+  if (inherits(page, "try-error")) {
+    return("Unable to read the webpage. Please check the URL.")
+  }
+  
+  # Extract all links on the page
+  links <- page |> html_nodes("a") |> html_attr("href")
+  
+  # Filter for valid URLs (ignoring 'null' values)
+  valid_links <- links[!is.na(links) & links != ""]
+
+  # Create full URLs (GitHub links)
+  full_links <- paste0("https://github.com", valid_links)
+
+  # Remove duplicates
+  full_links <- unique(full_links)
+  
+  # Filter for PDF links
+  pdf_links <- full_links[grepl("\\.pdf$", full_links, ignore.case = TRUE)]
+
+  return(pdf_links)
+}
+
+# Define a function to create a data frame for the table
+create_pdf_table <- function(pdf_links) {
+  data.frame(
+    Name = basename(pdf_links) |> tools::file_path_sans_ext(),
+    URL = pdf_links,
+    Cheatsheet = basename(pdf_links) |> tools::file_path_sans_ext(),
+    stringsAsFactors = FALSE
+  )
+}
+
+# Example usage
+url <- "https://github.com/rstudio/cheatsheets"
+all_pdf_links <- get_all_pdf_links(url)
+pdf_table <- create_pdf_table(all_pdf_links)
+
+# Print the table
+kable(pdf_table, caption = "Cheatsheets PDF Links")
