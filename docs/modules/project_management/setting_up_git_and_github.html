@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-10-30">
+<meta name="dcterms.date" content="2025-02-20">
 
 <title>Project Management 01: Setting Up Git and GitHub for R</title>
 <style>
@@ -374,6 +374,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><strong>Reading data files</strong></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PSYC197A/B: Directed Research Syllabus</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -428,7 +434,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 30, 2024</p>
+      <p class="date">February 20, 2025</p>
     </div>
   </div>
   
@@ -447,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="to-do-steps-of-the-task"><strong>To Do: Steps of the Task</strong></h3>
 <ol class="incremental" type="1">
 <li>Create a GitHub account</li>
-<li>Create GitHub repository named <code>"dataviz-exercises"</code> from a template repository</li>
+<li>Create GitHub repository from a template repository</li>
 <li>Check that Git is setup in RStudio</li>
 <li>Configure Git for R, within R/RStudio (a familiar context)
 <ul class="incremental">
@@ -497,8 +503,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You will need to create a personal repository for class exercises. You can create it by building the directory structure for it yourself. This, however, may lead to errors. Creating a project from a template will ensure all students have they same repository with the same directory structure.</p>
 <ol class="incremental" type="1">
 <li><p>Once logged into <strong>your</strong> GitHub account, go to this <a href="https://github.com/slicesofdata/start-project">template repository</a>.</p></li>
-<li><p>On the top right, you will see an option to create a <strong>Use this template</strong>. Click it an select <em>“Create a new repository”</em>.</p></li>
-<li><p>Name the repository <strong>dataviz-exercises</strong> and provide a description like <em>“for data viz class exercises and homework”</em>.</p></li>
+<li><p>On the top right, you will see an option to create a <strong>Use this template</strong>. Click it and select <em>“Create a new repository”</em>.</p></li>
+<li><p>Name the repository <strong>cdvlab-exercises</strong> and provide a description like <em>“for lab practice and exercises”</em>.</p></li>
 </ol>
 <div class="cell">
 <div class="cell-output-display">
@@ -613,23 +619,24 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] htmltools_0.5.8.1 DT_0.33           vroom_1.6.5       lubridate_1.9.3  
- [5] forcats_1.0.0     stringr_1.5.1     dplyr_1.1.4       purrr_1.0.2      
- [9] readr_2.1.5       tidyr_1.3.1       tibble_3.2.1      ggplot2_3.5.1    
-[13] tidyverse_2.0.0  
+ [1] htmltools_0.5.8.1 DT_0.33           openxlsx_4.2.5.2  vroom_1.6.5      
+ [5] lubridate_1.9.3   forcats_1.0.0     stringr_1.5.1     dplyr_1.1.4      
+ [9] purrr_1.0.2       readr_2.1.5       tidyr_1.3.1       tibble_3.2.1     
+[13] ggplot2_3.5.1     tidyverse_2.0.0  
 
 loaded via a namespace (and not attached):
  [1] utf8_1.2.4        generics_0.1.3    stringi_1.8.4     hms_1.1.3        
  [5] digest_0.6.36     magrittr_2.0.3    evaluate_0.24.0   grid_4.4.1       
  [9] timechange_0.3.0  fastmap_1.2.0     R.oo_1.26.0       rprojroot_2.0.4  
-[13] jsonlite_1.8.8    R.utils_2.12.3    fansi_1.0.6       scales_1.3.0     
-[17] cli_3.6.3         rlang_1.1.4       crayon_1.5.3      R.methodsS3_1.8.2
-[21] bit64_4.0.5       munsell_0.5.1     withr_3.0.1       yaml_2.3.10      
-[25] tools_4.4.1       tzdb_0.4.0        colorspace_2.1-0  here_1.0.1       
-[29] vctrs_0.6.5       R6_2.5.1          png_0.1-8         lifecycle_1.0.4  
-[33] htmlwidgets_1.6.4 bit_4.0.5         pkgconfig_2.0.3   pillar_1.9.0     
-[37] gtable_0.3.5      glue_1.7.0        xfun_0.45         tidyselect_1.2.1 
-[41] rstudioapi_0.16.0 knitr_1.47        rmarkdown_2.27    compiler_4.4.1   </code></pre>
+[13] jsonlite_1.8.8    zip_2.3.1         R.utils_2.12.3    fansi_1.0.6      
+[17] scales_1.3.0      cli_3.6.3         rlang_1.1.4       crayon_1.5.3     
+[21] R.methodsS3_1.8.2 bit64_4.0.5       munsell_0.5.1     withr_3.0.1      
+[25] yaml_2.3.10       tools_4.4.1       tzdb_0.4.0        colorspace_2.1-0 
+[29] pacman_0.5.1      here_1.0.1        png_0.1-8         vctrs_0.6.5      
+[33] R6_2.5.1          lifecycle_1.0.4   htmlwidgets_1.6.4 bit_4.0.5        
+[37] pkgconfig_2.0.3   pillar_1.9.0      gtable_0.3.5      Rcpp_1.0.12      
+[41] glue_1.7.0        xfun_0.45         tidyselect_1.2.1  rstudioapi_0.16.0
+[45] knitr_1.47        rmarkdown_2.27    compiler_4.4.1   </code></pre>
 </div>
 </div>
 </div>
