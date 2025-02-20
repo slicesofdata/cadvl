@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-10-30">
+<meta name="dcterms.date" content="2025-02-20">
 
 <title>Project Management 02: R Projects, Git, and GitHub</title>
 <style>
@@ -374,6 +374,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><strong>Reading data files</strong></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PSYC197A/B: Directed Research Syllabus</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -389,13 +395,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a></li>
   <li><a href="#libraries-used" id="toc-libraries-used" class="nav-link" data-scroll-target="#libraries-used"><strong>Libraries Used</strong></a>
   <ul class="incremental collapse">
-  <li><a href="#readings-and-preparation" id="toc-readings-and-preparation" class="nav-link" data-scroll-target="#readings-and-preparation"><strong>Readings and Preparation</strong></a></li>
   <li><a href="#warning" id="toc-warning" class="nav-link" data-scroll-target="#warning"><strong>Warning</strong></a></li>
   <li><a href="#to-do-steps-of-the-task" id="toc-to-do-steps-of-the-task" class="nav-link" data-scroll-target="#to-do-steps-of-the-task"><strong>To Do: Steps of the Task</strong></a></li>
   </ul></li>
-  <li><a href="#creating-a-local-directory-for-class" id="toc-creating-a-local-directory-for-class" class="nav-link" data-scroll-target="#creating-a-local-directory-for-class"><strong>Creating a Local Directory for Class</strong></a></li>
+  <li><a href="#creating-a-local-directory-for-all-data-projects" id="toc-creating-a-local-directory-for-all-data-projects" class="nav-link" data-scroll-target="#creating-a-local-directory-for-all-data-projects"><strong>Creating a Local Directory for all Data Projects</strong></a></li>
   <li><a href="#connecting-the-repository-to-an-rstudio-project" id="toc-connecting-the-repository-to-an-rstudio-project" class="nav-link" data-scroll-target="#connecting-the-repository-to-an-rstudio-project"><strong>Connecting the Repository to an RStudio Project</strong></a></li>
-  <li><a href="#unzipping-the-directory-structure" id="toc-unzipping-the-directory-structure" class="nav-link" data-scroll-target="#unzipping-the-directory-structure"><strong>Unzipping the Directory Structure</strong></a></li>
   <li><a href="#understanding-the-directory-structure" id="toc-understanding-the-directory-structure" class="nav-link" data-scroll-target="#understanding-the-directory-structure"><strong>Understanding the Directory Structure</strong></a>
   <ul class="incremental collapse">
   <li><a href="#directory-and-sub-directory-purpose" id="toc-directory-and-sub-directory-purpose" class="nav-link" data-scroll-target="#directory-and-sub-directory-purpose"><strong>Directory and Sub-Directory Purpose</strong></a></li>
@@ -428,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 30, 2024</p>
+      <p class="date">February 20, 2025</p>
     </div>
   </div>
   
@@ -442,10 +446,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview"><strong>Overview</strong></h2>
-<p>This module focuses on getting organized. Rather than save files in a haphazard way that will just introduce stress to your life, we will focus on creating order. The best way to create order and stay organized is to <strong>1)</strong> create <em>projects</em> in RStudio, <strong>2)</strong> create directories and sub-directories that leave no ambiguity about where your files are, and <strong>3)</strong> manage all directory paths and file paths simply using the <strong><code>{here}</code></strong> library. Another way is to connect that project with a remote repository saved someplace like GitHub for collaboration. In certain classes (and for your team project), you will use Git to interact with remote repositories connected to Projects in RStudio.</p>
-<p>In order to maintain organization for this class and the project, you will set up a class folder (aka directory) on your computer. You will then create an RStudio project and connect it to a remote private repository on your GitHub account. The reason for its privacy is because of data related to certain exercises.</p>
-<p>You will use this RStudio project for <strong>all class exercises and homework</strong> so that there is no ambiguity about where your files are saved. Finally, you will create directories within your new project directory so that you have an organized directory structure for storing your files. Systems paths for project files and directories will be manage using the <strong><code>{here}</code></strong> library. This process will also ensure that each student’s computer is configured in the same manner.</p>
-<p>Reading through these steps, however, will facilitate your ability to apply the concepts and run the associated functions in class. Thus, all students will gain some basic experience with Git commands and a remote repository. Students will be collaborators of a repository for their team project. Coding leads will carry the responsibility of maintaining the organization of the team’s private repository.</p>
+<p>This module focuses on getting organized. Rather than save files in a haphazard way that will just introduce stress to your life, we will focus on creating order. There are 3 main ways to create order and stay organized:</p>
+<ul class="incremental">
+<li><strong>1)</strong> create <em>projects</em> in RStudio</li>
+<li><strong>2)</strong> create directories and sub-directories that leave no ambiguity about where your files are, and</li>
+<li><strong>3)</strong> manage all directory paths and file paths simply using the <strong><code>{here}</code></strong> library</li>
+<li><strong>4)</strong> user lowercase for files names and replaces spaces with hyphens or underscores</li>
+</ul>
+<p>Another way is to connect that project with a remote repository saved someplace like GitHub for collaboration. You will use Git to interact with remote repositories connected to Projects in RStudio.</p>
+<p>In order to maintain organization for data projects, you will set up a lab (aka directory) on your computer, ideally where you will always know where to look. You will then create an RStudio project and connect it to a remote private repository associated with your GitHub account. The reason for its privacy is because of data related to certain exercises.</p>
+<p>You will use this RStudio project for <strong>all exercises </strong> so that there is no ambiguity about where your files are saved. Finally, you will create directories within your new project directory so that you have an organized directory structure for storing your files. Systems paths for project files and directories will be manage using the <strong><code>{here}</code></strong> library. This process will also ensure that each student’s computer is configured in the same manner.</p>
+<p>Reading through these steps, however, will facilitate your ability to apply the concepts and run the associated functions. Thus, all RAs will gain some basic experience with Git commands and with communicating with a remote repository. RAs will be collaborators of a repository for certain projects.</p>
 </section>
 <section id="libraries-used" class="level2">
 <h2 class="anchored" data-anchor-id="libraries-used"><strong>Libraries Used</strong></h2>
@@ -455,12 +466,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>{gh}</strong>: 1.4.1: for querying the github api</li>
 <li><strong>{gert}</strong>: 2.0.1: optional R library approach for git commands</li>
 </ul>
-<section id="readings-and-preparation" class="level3">
-<h3 class="anchored" data-anchor-id="readings-and-preparation"><strong>Readings and Preparation</strong></h3>
-<p><em>Before Class</em>: First, watch course videos (and/or read) to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.</p>
-<p>Complete the items in the <strong>To Do: Steps of the Task</strong> section.</p>
-<p><em>Class</em>: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.</p>
-</section>
+<!--
+### **Readings and Preparation**
+
+*Before Class*: First, watch course videos (and/or read) to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.
+
+Complete the items in the **To Do: Steps of the Task** section.
+
+*Class*: In class, some functions and concepts will be introduced and we will practice implementing code through exercises. 
+
+
+
+
+
+
+
+
+-->
 <section id="warning" class="level3">
 <h3 class="anchored" data-anchor-id="warning"><strong>Warning</strong></h3>
 <p><strong>Do not try to cheat the system and jump ahead</strong>. If you do, just like playing the <em>Monopoly</em> board game, your <a href="https://www.monopolyland.com/passing-go-rules/">chance card</a> may read <em>“Go to jail. Go directly to jail. Do not pass go. Do not collect $200.”</em> In other words, you cannot complete these steps without ensuring that your credentials are set. You will run into errors and try to contact me. If the following code does not return information for your login, your github account, scopes, and a token, you will be unable to proceed. If it does but your token is expired, you cannot proceed. <strong>Ensure you have set your credentials.</strong></p>
@@ -473,32 +495,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Create a <em>Version-Control Project</em> with RStudio</li>
 </ol>
 <ul class="incremental">
-<li>Name it <code>dataviz-exercises</code> (for class exercises and your homework)</li>
+<li>Name it <code>cdvlab-exercises</code> (for exercises and practice)</li>
 </ul>
 <ol class="incremental" start="2" type="1">
 <li>Make file edits, stage those edits, and commit them</li>
 <li>Push commits to GitHub</li>
 </ol>
-<p>In class, we will practice using RStudio along with some simple Git commands for adding, committing, and pushing files.</p>
+<p>In workshops or for data projects, we will use RStudio along with some simple Git commands for adding, committing, and pushing files.</p>
 </section>
 </section>
-<section id="creating-a-local-directory-for-class" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-local-directory-for-class"><strong>Creating a Local Directory for Class</strong></h2>
-<p>Create a folder (aka directory) named <code>"dataviz"</code> (yes, all lowercase) on your computer. I recommend creating the directory someplace where you might not accidentally delete it. Create only one so as not to confuse yourself.</p>
+<section id="creating-a-local-directory-for-all-data-projects" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-local-directory-for-all-data-projects"><strong>Creating a Local Directory for all Data Projects</strong></h2>
+<p>I recommend creating a folder (aka directory) on your computer for managing all or your data-related activities. Such a directory makes finding your projects easy. Name it <code>"data"</code> (yes, all lowercase). I recommend creating the directory someplace where you might not accidentally delete it. Create only one so as not to confuse yourself.</p>
 </section>
 <section id="connecting-the-repository-to-an-rstudio-project" class="level2">
 <h2 class="anchored" data-anchor-id="connecting-the-repository-to-an-rstudio-project"><strong>Connecting the Repository to an RStudio Project</strong></h2>
-<p>You should already have a repository on GitHub named <em>“dataviz-exercises”</em> which you created from <a href="https://github.com/slicesofdata/start-project">this template repository</a>. You will now create an RStudio project and connect it to that remote repository on your GitHub account.</p>
+<p>You should already have a repository on GitHub named <em>“cdvlab-exercises”</em> which you created from <a href="https://github.com/slicesofdata/start-project">this template repository</a>. You will now create an RStudio project and connect it to that remote repository on your GitHub account.</p>
 <p>When you create the project inside your class directory, your directory structure will look like this:</p>
-<pre><code>└── dataviz
-│   └── dataviz-exercises </code></pre>
+<pre><code>└── data
+│   └── cdvlab-exercises </code></pre>
 <ol class="incremental" type="1">
 <li><p>In RStudio, <strong>File &gt; New Project &gt; Version Control &gt; Git</strong>.</p></li>
 <li><p>In the pop-up, you will see a request for the “repository URL”. Paste the URL of the GitHub repository. This URL will be the same as what you see on your GitHub account. However, we need to add <code>.git</code> to the end of it.</p></li>
 </ol>
-<pre><code>    https://github.com/&lt;your_github_username&gt;/dataviz-exercises.git</code></pre>
+<pre><code>    https://github.com/&lt;your_github_username&gt;/cdvlab-exercises.git</code></pre>
 <ol class="incremental" start="3" type="1">
-<li>When you create the project, a directory will be created as a <em>sub</em>-directory of your main <code>/dataviz</code> directory. Thus, you will see <code>/dataviz/dataviz-exercises</code>.</li>
+<li>When you create the project, a directory will be created as a <em>sub</em>-directory of your main <code>/data</code> directory. Thus, you will see <code>/data/cdvlab-exercises</code>.</li>
 </ol>
 <p><strong>WARNING:</strong> <em>Do not</em> create the project inside of an existing project’s directory.</p>
 <p><strong>Note:</strong> I recommend that you also select <em>“Open in new session”</em> in order to compartmentalize projects. When you work on the team project, open the project. When you work on your homework or other class exercises, open your <em>homework</em> project.</p>
@@ -511,21 +533,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ol>
 <p>If the repository already exists on GitHub (and it does in this instance) you should see RStudio flash a connection to GitHub and likely <em>pull</em> the repo contents down to your newly-created project directory. In this case, however, your local Git repository on RStudio will contain few files.</p>
-</section>
-<section id="unzipping-the-directory-structure" class="level2">
-<h2 class="anchored" data-anchor-id="unzipping-the-directory-structure"><strong>Unzipping the Directory Structure</strong></h2>
-<p>Although building the directory structure on your own is possible, the repository has a <code>.zip</code> file which contains all of the directories needed for the project. You can unzip them manually or do this in RStudio with the <code>"unzip_compressed_file.R"</code> script. The script has not been tested on a Mac so there may be an error.</p>
+<!--
+## **Unzipping the Directory Structure**
+
+Although building the directory structure on your own is possible, the repository has a `.zip` file which contains all of the directories needed for the project. You can unzip them manually or do this in RStudio with the `"unzip_compressed_file.R"` script. The script has not been tested on a Mac so there may be an error. 
+
+-->
 </section>
 <section id="understanding-the-directory-structure" class="level2">
 <h2 class="anchored" data-anchor-id="understanding-the-directory-structure"><strong>Understanding the Directory Structure</strong></h2>
 <p>Directory structures are used for organization. Each directory and sub directory has a purpose, which is to contain files of a certain type. As long as you know what the goal of the file is, you know where to save it. When working with teams, this common language avoids many problems.</p>
 <p>Although there are different ways to create project directory structures and different ways to name those directories, we will use the following structure. Not all directories will be used for all types of projects.</p>
-<p>Inside your <code>/dataviz/dataviz-exercises</code> directory your full project directory structure should look like the one below.</p>
+<p>Inside your <code>/data/cdvlab-exercises</code> directory your full project directory structure should look like the one below.</p>
 <pre><code>└── data
 │   └── interim 
 │   ├── processed
 │   └── raw
-├── dataviz-exercises.Rproj (the R project file)
+├── cdvlab-exercises.Rproj (the R project file)
 ├── docs
 ├── .gitignore              (a version-control gitignore file)
 ├── README.md               (a read me file)
@@ -556,7 +580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>/interim</code>, for <code>/data/interim/</code>: <code>.Rds</code> (highly recommended) files containing intermediate transformed data; cleaned, merged, etc. but not processed fully to be in final form</li>
 <li><code>/processed</code>, for <code>/data/processed/</code>; <code>.Rds</code> (highly recommended) files containing finalized data (e.g., aggregated, summaries, and data frames ready for plotting</li>
 </ul>
-<p><strong>NOTE:</strong> For this course, you will see me write data as <code>.Rds</code> files using the <code>saveRDS()</code> function because this format will preserve variable formatting which will affect plots.</p>
+<p><strong>NOTE:</strong> For the lab, you will see me write data as <code>.Rds</code> files using the <code>saveRDS()</code> function because this file format will preserve variable formatting and reduce redoing work later. There are other ways of handling this with <code>{dplyr}</code> functions but I find <code>saveRDS()</code> is the most straightforward.</p>
 <p><strong>WARNING:</strong> If you process and save those data files as <code>.csv</code>, <code>.xlsx</code>, or similar, you will likely find yourself working harder by recoding solutions you have already performed. I do not recommend this except for final versions that no longer require processing.</p>
 <p><strong>Source/Code Files</strong></p>
 <p>Inside <code>/src</code>, add the following sub-directories:</p>
@@ -625,23 +649,24 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] htmltools_0.5.8.1 DT_0.33           vroom_1.6.5       lubridate_1.9.3  
- [5] forcats_1.0.0     stringr_1.5.1     dplyr_1.1.4       purrr_1.0.2      
- [9] readr_2.1.5       tidyr_1.3.1       tibble_3.2.1      ggplot2_3.5.1    
-[13] tidyverse_2.0.0  
+ [1] htmltools_0.5.8.1 DT_0.33           openxlsx_4.2.5.2  vroom_1.6.5      
+ [5] lubridate_1.9.3   forcats_1.0.0     stringr_1.5.1     dplyr_1.1.4      
+ [9] purrr_1.0.2       readr_2.1.5       tidyr_1.3.1       tibble_3.2.1     
+[13] ggplot2_3.5.1     tidyverse_2.0.0  
 
 loaded via a namespace (and not attached):
- [1] bit_4.0.5         gtable_0.3.5      jsonlite_1.8.8    crayon_1.5.3     
- [5] compiler_4.4.1    tidyselect_1.2.1  scales_1.3.0      yaml_2.3.10      
- [9] fastmap_1.2.0     here_1.0.1        R6_2.5.1          generics_0.1.3   
-[13] knitr_1.47        htmlwidgets_1.6.4 munsell_0.5.1     rprojroot_2.0.4  
-[17] tzdb_0.4.0        pillar_1.9.0      R.utils_2.12.3    rlang_1.1.4      
-[21] utf8_1.2.4        stringi_1.8.4     xfun_0.45         bit64_4.0.5      
-[25] timechange_0.3.0  cli_3.6.3         withr_3.0.1       magrittr_2.0.3   
-[29] digest_0.6.36     grid_4.4.1        rstudioapi_0.16.0 hms_1.1.3        
-[33] lifecycle_1.0.4   R.methodsS3_1.8.2 R.oo_1.26.0       vctrs_0.6.5      
-[37] evaluate_0.24.0   glue_1.7.0        fansi_1.0.6       colorspace_2.1-0 
-[41] rmarkdown_2.27    tools_4.4.1       pkgconfig_2.0.3  </code></pre>
+ [1] utf8_1.2.4        generics_0.1.3    stringi_1.8.4     hms_1.1.3        
+ [5] digest_0.6.36     magrittr_2.0.3    evaluate_0.24.0   grid_4.4.1       
+ [9] timechange_0.3.0  fastmap_1.2.0     R.oo_1.26.0       rprojroot_2.0.4  
+[13] jsonlite_1.8.8    zip_2.3.1         R.utils_2.12.3    fansi_1.0.6      
+[17] scales_1.3.0      cli_3.6.3         rlang_1.1.4       crayon_1.5.3     
+[21] R.methodsS3_1.8.2 bit64_4.0.5       munsell_0.5.1     withr_3.0.1      
+[25] yaml_2.3.10       tools_4.4.1       tzdb_0.4.0        colorspace_2.1-0 
+[29] pacman_0.5.1      here_1.0.1        vctrs_0.6.5       R6_2.5.1         
+[33] lifecycle_1.0.4   htmlwidgets_1.6.4 bit_4.0.5         pkgconfig_2.0.3  
+[37] pillar_1.9.0      gtable_0.3.5      Rcpp_1.0.12       glue_1.7.0       
+[41] xfun_0.45         tidyselect_1.2.1  rstudioapi_0.16.0 knitr_1.47       
+[45] rmarkdown_2.27    compiler_4.4.1   </code></pre>
 </div>
 </div>
 </div>
