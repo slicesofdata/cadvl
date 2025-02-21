@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2025-02-14">
+<meta name="dcterms.date" content="2025-02-21">
 
 <title>Introduction to RStudio, R Markdown, &amp; Functions</title>
 <style>
@@ -374,6 +374,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><strong>Reading data files</strong></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><b>PSYC197A/B: Directed Research Syllabus</b></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -439,7 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 14, 2025</p>
+      <p class="date">February 21, 2025</p>
     </div>
   </div>
   
@@ -491,11 +497,11 @@ Under construction.
 </section>
 <section id="functions" class="level2">
 <h2 class="anchored" data-anchor-id="functions"><strong>Functions</strong></h2>
-<p>The code you write for the interpreter will involve referencing functions. You have used a function already when installing libraries (e.g., <code>install.packages()</code>. A <code>function</code> is nothing more than a set of statements organized together to perform some desired operation. In <code>R</code>, a function is an object. This means the <code>R</code> interpreter passes control to the function, along with any arguments that are necessary for the function to perform that operation and return the result of that operation.</p>
+<p>The code you write for the interpreter will involve referencing functions. A <code>function</code> is nothing more than a set of statements organized together to perform some desired operation. In <code>R</code>, a function is an object. This means the <code>R</code> interpreter passes control to the function, along with any arguments that are necessary for the function to perform that operation and return the result of that operation. In order to install libraries to perform various operations, you will need a function like <code>install.packages()</code> or <code>pacman::p_load()</code>).</p>
 </section>
 <section id="a-function-example" class="level2">
 <h2 class="anchored" data-anchor-id="a-function-example"><strong>A Function Example</strong></h2>
-<p>For example, reading a file into <code>R</code> involves using a function that performs that operation. For these functions to read a file containing data, you will need to specify the required and/or optional <code>arguments</code> for given <code>parameters</code> of the function. Given prerequisite courses, functions and coding basics will not be covered extensively in this course. If a refresher is needed, <a href="https://gabrielcook.xyz/dataviz24/modules_setup/">one is here</a>. Nevertheless, one such function is <code>read.table()</code> which is used to read tabular data files. Another function is <code>read.csv()</code>, which is a special case of <code>read.table()</code>. For this function to read a file, you would need to specify the <code>file</code> argument (and file path if the file is not in your working directory) argument at very least so that <code>R</code> knows what file to read. Another function you may use is <code>data.frame()</code> which is used to create data frames. Using <code>R</code> depends on using functions that are designed to handle various tasks. Unlike some languages, we will not have to create many of our own functions but instead will leverage the work of <code>R</code> developers.</p>
+<p>For example, reading a file into <code>R</code> involves using a function that performs that operation. For these functions to read a file containing data, you will need to specify the required and/or optional <code>arguments</code> for given <code>parameters</code> of the function. Given prerequisite courses, functions and coding basics will not be covered extensively in this course. If a refresher is needed, <a href="https://gabrielcook.xyz/dataviz24/modules_setup/functions_and_scripts.html">one is here</a>. Nevertheless, one such function is <code>read.table()</code> which is used to read tabular data files. Another function is <code>read.csv()</code>, which is a special case of <code>read.table()</code>. For this function to read a file, you would need to specify the <code>file</code> argument (and file path if the file is not in your working directory) argument at very least so that <code>R</code> knows what file to read. Another function you may use is <code>data.frame()</code> which is used to create data frames. Using <code>R</code> depends on using functions that are designed to handle various tasks. Unlike some languages, we will not have to create many of our own functions but instead will leverage the work of <code>R</code> developers.</p>
 </section>
 </section>
 <section id="getting-help" class="level1">
@@ -506,17 +512,22 @@ Under construction.
 <p>To ask <code>R</code> about what a function does, you can use <code>?</code> paired with the function. In the <strong>Help</strong> window, you will see information about the package the function is from, how it is used, how to use it by specifying <em>arguments</em> (more on this later), and usually some examples of how it is used.</p>
 <p><code>?install.packages</code></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>?install.packages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Alternatively, you can use the <code>help()</code> function:</p>
+<p>We will not actually use <code>install.packages()</code> often. Instead, we will use <code>p_load()</code> from the <code>{pacman}</code> library. So, let’s install that library.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>No that you have <code>{pacman}</code> installed, let’s use it to install several other libraries.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, here, DT, data.table, fs, ragg, readxl, remotes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Another function is the <code>help()</code> function:</p>
 <ul class="incremental">
 <li><code>help("install.packages")</code></li>
 <li><code>help("install.packages", package = "utils")</code></li>
 </ul>
+<p>Note, <code>?install.packages</code> might be easier to type than <code>help()</code>, however.</p>
 <p>These methods are all equivalent ways of getting help:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"summarize"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>?summarize</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>?summarize<span class="sc">::</span>summarize</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"summarize"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>?summarize</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>?summarize<span class="sc">::</span>summarize</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can also simply type a query into the search bar in the <code>RStudio</code> Help menu tab (likely to the right).</p>
 </section>
 <section id="external-help" class="level2">
@@ -584,17 +595,17 @@ Under construction.
 <p>For example:</p>
 <p><code>install.packages(c("rmarkdown", "rstudioapi"))</code></p>
 <p>Try it out:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"rmarkdown"</span>, <span class="st">"rstudioapi"</span>),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"rmarkdown"</span>, <span class="st">"rstudioapi"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Once libraries have been installed, you can access their various functions but that step will come later. Although the order of installation for libraries does not matter, the order in which you access libraries can matter. Keep an eye to for warnings in the <code>R console</code>.</p>
 </section>
 <section id="session-information" class="level1">
 <h1><strong>Session Information</strong></h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.4.1 (2024-06-14 ucrt)
 Platform: x86_64-w64-mingw32/x64

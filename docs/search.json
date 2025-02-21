@@ -599,7 +599,7 @@
     "href": "modules/introduction_to_r_rstudio_and_rmarkdown.html#functions",
     "title": "Introduction to RStudio, R Markdown, & Functions",
     "section": "Functions",
-    "text": "Functions\nThe code you write for the interpreter will involve referencing functions. You have used a function already when installing libraries (e.g., install.packages(). A function is nothing more than a set of statements organized together to perform some desired operation. In R, a function is an object. This means the R interpreter passes control to the function, along with any arguments that are necessary for the function to perform that operation and return the result of that operation.",
+    "text": "Functions\nThe code you write for the interpreter will involve referencing functions. A function is nothing more than a set of statements organized together to perform some desired operation. In R, a function is an object. This means the R interpreter passes control to the function, along with any arguments that are necessary for the function to perform that operation and return the result of that operation. In order to install libraries to perform various operations, you will need a function like install.packages() or pacman::p_load()).",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -623,7 +623,7 @@
     "href": "modules/introduction_to_r_rstudio_and_rmarkdown.html#internal-help",
     "title": "Introduction to RStudio, R Markdown, & Functions",
     "section": "Internal Help",
-    "text": "Internal Help\nYou will certainly run into problems coding. When you don’t speak the language perfectly, R will let you know there are errors. So, how do you find help in R?\nTo ask R about what a function does, you can use ? paired with the function. In the Help window, you will see information about the package the function is from, how it is used, how to use it by specifying arguments (more on this later), and usually some examples of how it is used.\n?install.packages\n?install.packages\nAlternatively, you can use the help() function:\n\nhelp(\"install.packages\")\nhelp(\"install.packages\", package = \"utils\")\n\nThese methods are all equivalent ways of getting help:\nhelp(\"summarize\")\n\n?summarize\n\n?summarize::summarize\nYou can also simply type a query into the search bar in the RStudio Help menu tab (likely to the right).",
+    "text": "Internal Help\nYou will certainly run into problems coding. When you don’t speak the language perfectly, R will let you know there are errors. So, how do you find help in R?\nTo ask R about what a function does, you can use ? paired with the function. In the Help window, you will see information about the package the function is from, how it is used, how to use it by specifying arguments (more on this later), and usually some examples of how it is used.\n?install.packages\n?install.packages\nWe will not actually use install.packages() often. Instead, we will use p_load() from the {pacman} library. So, let’s install that library.\ninstall.packages(\"pacman\")\nNo that you have {pacman} installed, let’s use it to install several other libraries.\npacman::p_load(tidyverse, here, DT, data.table, fs, ragg, readxl, remotes)\nAnother function is the help() function:\n\nhelp(\"install.packages\")\nhelp(\"install.packages\", package = \"utils\")\n\nNote, ?install.packages might be easier to type than help(), however.\nThese methods are all equivalent ways of getting help:\nhelp(\"summarize\")\n\n?summarize\n\n?summarize::summarize\nYou can also simply type a query into the search bar in the RStudio Help menu tab (likely to the right).",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -963,11 +963,100 @@
     "text": "Books\n\nLots of alternative books https://www.bigbookofr.com/data-visualization.html"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "modules/syllabus.html",
+    "href": "modules/syllabus.html",
+    "title": "PSYC197A/B: Directed Research Syllabus",
     "section": "",
-    "text": "Nothing to see here"
+    "text": "This course is a research practicum with a Psychology faculty member, focusing on different aspects of scientific psychological research, including experiment design, data collection, literature review, data analysis, and conference presentation or manuscript preparation.\nThis class differs from PSYC199 CM - Independent Study in Psychology in that the research must be part of the faculty member’s continuous line of inquiry within that faculty member’s research lab.\nStudents may register for:\n- 0.25 credit (at least 5 hours per week; 8-10 page paper or equivalent academic work)\n- 0.5 credit (at least 10 hours per week; 15-20 page paper or equivalent academic work)\n- PSYC197B CM (non-credit) – Students must fully participate in lab activities but do not submit a research paper.\nMaximum of 1 credit may count toward graduation.",
+    "crumbs": [
+      "**Modules**",
+      "<b>Modules</b>",
+      "<b>PSYC197A/B: Directed Research Syllabus</b>"
+    ]
+  },
+  {
+    "objectID": "modules/syllabus.html#research-activities",
+    "href": "modules/syllabus.html#research-activities",
+    "title": "PSYC197A/B: Directed Research Syllabus",
+    "section": "Research Activities",
+    "text": "Research Activities\nRAs will participate in:\n\nLiterature Searches: PsycInfo, ResearchRabbit, Zotero\n\nData Collection: CITI certification, SonaSystems, participant management\n\nExperiment Programming: PsychoPy, Python, JavaScript, Qualtrics\n\nData Analysis: R, RStudio, Git, GitHub\n\nCommunication: Regular updates via Discord and GitHub\n\nTime Commitment:\n- 0.25 Credit: 5 hours/week\n- 0.5 Credit: 10 hours/week\n- PSYC197B CM (Non-credit): Full participation required\nRAs must be professional, reliable, punctual, and able to work independently and collaboratively.",
+    "crumbs": [
+      "**Modules**",
+      "<b>Modules</b>",
+      "<b>PSYC197A/B: Directed Research Syllabus</b>"
+    ]
+  },
+  {
+    "objectID": "modules/syllabus.html#why-professionalism-matters",
+    "href": "modules/syllabus.html#why-professionalism-matters",
+    "title": "PSYC197A/B: Directed Research Syllabus",
+    "section": "Why Professionalism Matters",
+    "text": "Why Professionalism Matters\n\nResearch labs function like professional workplaces – deadlines, communication, and responsibility matter.\n\nMany graduate schools and employers request letters of recommendation that assess professional skills.\n\nPoor communication and missed deadlines negatively impact opportunities.",
+    "crumbs": [
+      "**Modules**",
+      "<b>Modules</b>",
+      "<b>PSYC197A/B: Directed Research Syllabus</b>"
+    ]
+  },
+  {
+    "objectID": "modules/syllabus.html#expectations",
+    "href": "modules/syllabus.html#expectations",
+    "title": "PSYC197A/B: Directed Research Syllabus",
+    "section": "Expectations",
+    "text": "Expectations\n\nTreat Research Like a Job – Complete work on time and ask for help when needed.\n\nCommunicate Clearly – Respond to messages within 24-48 hours.\n\nBe Accountable – Keep records, follow through on assignments, and update work logs.\n\nMaintain Data Privacy – Data cannot be stored on unauthorized cloud servers (e.g., Google Drive).\n\nFailure to meet these expectations affects grading and recommendation letters.",
+    "crumbs": [
+      "**Modules**",
+      "<b>Modules</b>",
+      "<b>PSYC197A/B: Directed Research Syllabus</b>"
+    ]
+  },
+  {
+    "objectID": "modules/syllabus.html#final-research-contribution",
+    "href": "modules/syllabus.html#final-research-contribution",
+    "title": "PSYC197A/B: Directed Research Syllabus",
+    "section": "Final Research Contribution",
+    "text": "Final Research Contribution\n\n\n\nCredit\nRequirement\n\n\n\n\n0.25\n8-10 page research paper (or equivalent)\n\n\n0.5\n15-20 page research paper (or equivalent)\n\n\nNon-credit\nNo research paper required",
+    "crumbs": [
+      "**Modules**",
+      "<b>Modules</b>",
+      "<b>PSYC197A/B: Directed Research Syllabus</b>"
+    ]
+  },
+  {
+    "objectID": "modules/syllabus.html#data-privacy-intellectual-property",
+    "href": "modules/syllabus.html#data-privacy-intellectual-property",
+    "title": "PSYC197A/B: Directed Research Syllabus",
+    "section": "Data Privacy & Intellectual Property",
+    "text": "Data Privacy & Intellectual Property\n\nAll work is intellectual property of the Cognition and Data Visualization Laboratory.\n\nData must not be stored on cloud servers (Google Drive, Dropbox, Box) unless approved.\n\nData files must be deleted from personal computers after lab duties end.",
+    "crumbs": [
+      "**Modules**",
+      "<b>Modules</b>",
+      "<b>PSYC197A/B: Directed Research Syllabus</b>"
+    ]
+  },
+  {
+    "objectID": "modules/syllabus.html#professionalism-responsibility",
+    "href": "modules/syllabus.html#professionalism-responsibility",
+    "title": "PSYC197A/B: Directed Research Syllabus",
+    "section": "Professionalism & Responsibility",
+    "text": "Professionalism & Responsibility\n\nTreat this course as a professional research role.\n\nUnreliable communication, missed deadlines, and incomplete work negatively affect evaluations and recommendations.\n\nResearch requires discipline, accountability, and teamwork – essential skills in any career.",
+    "crumbs": [
+      "**Modules**",
+      "<b>Modules</b>",
+      "<b>PSYC197A/B: Directed Research Syllabus</b>"
+    ]
+  },
+  {
+    "objectID": "modules/syllabus.html#collaboration-independence",
+    "href": "modules/syllabus.html#collaboration-independence",
+    "title": "PSYC197A/B: Directed Research Syllabus",
+    "section": "Collaboration & Independence",
+    "text": "Collaboration & Independence\n\nCollaboration is encouraged, but students must demonstrate independent work ethic.",
+    "crumbs": [
+      "**Modules**",
+      "<b>Modules</b>",
+      "<b>PSYC197A/B: Directed Research Syllabus</b>"
+    ]
   },
   {
     "objectID": "modules/index.html",
@@ -990,6 +1079,13 @@
       "**Modules**",
       "<b>Modules</b>"
     ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Nothing to see here"
   },
   {
     "objectID": "modules_setup/index.html",
@@ -1286,14 +1382,14 @@
   {
     "objectID": "index.html#what-we-do",
     "href": "index.html#what-we-do",
-    "title": "Cognition & Data Visualization Lab",
+    "title": "Cognition & Data Visualization (CDV) Lab",
     "section": "What we do",
-    "text": "What we do\nIn the Cognition and Data Visualization lab, our research focuses on understanding how people perceive, attend to, interpret, remember, and make decisions from data visualizations. In particular, we are interested in understanding the cognitive constraints, limitations, and biases associated with the daily task of understanding data through visualizations. We also study how attention, cognitive control, and working memory relate to other cognitive behaviors like memory and decision making.\nAs an individual living with vision difficulties associated with pathological myopia, I am also interested in understanding how the rich visual information communicated through data visualizations can be made accessible to individuals with vision difficulties (e.g., blindness, low-vision, etc.).\nStudents interested in studying data visualization should contact me here or visit me on campus."
+    "text": "What we do\nIn the Cognition and Data Visualization (CDV) lab, our research focuses on understanding how people perceive, attend to, interpret, remember, and make decisions from data visualizations. In particular, we are interested in understanding the cognitive constraints, limitations, and biases associated with the daily task of understanding data through visualizations. We also study how attention, cognitive control, and working memory relate to other cognitive behaviors like memory and decision making.\nAs an individual living with vision difficulties associated with pathological myopia, I am also interested in understanding how the rich visual information communicated through data visualizations can be made accessible to individuals with vision difficulties (e.g., blindness, low-vision, etc.).\nStudents interested in studying data visualization should contact me here or visit me on campus."
   },
   {
     "objectID": "index.html#skills-and-tools",
     "href": "index.html#skills-and-tools",
-    "title": "Cognition & Data Visualization Lab",
+    "title": "Cognition & Data Visualization (CDV) Lab",
     "section": "Skills and Tools",
     "text": "Skills and Tools\n\nData Analysis: R, RStudio\nGit: GitHub, GitLab, GitDesktop\nExperimental Design: E-prime, PsychoPy (Python & JavaScript), Gorilla (JavaScript)\nExperiment Management: Sona-Systems (local experiments); Pavlovia & Prolific (for identifying samples for online data collection across the globe)\nSurveys: Qualtrics"
   },
@@ -1309,7 +1405,7 @@
     "href": "modules/project_management/setting_up_git_and_github.html",
     "title": "Project Management 01: Setting Up Git and GitHub for R",
     "section": "",
-    "text": "We will perform all the necessary tasks for using Git with RStudio and managing files at the remote repository at GitHub.\n\n\n\nCreate a GitHub account\nCreate GitHub repository named \"dataviz-exercises\" from a template repository\nCheck that Git is setup in RStudio\nConfigure Git for R, within R/RStudio (a familiar context)\n\nCreate a Personal Access Token (PAT)\nSet your Git Credentials (using your PAT)\n\n\nWarning: Do not try to create an RStudio version control project from a repo before completing these steps.\nFollow steps below to complete.",
+    "text": "We will perform all the necessary tasks for using Git with RStudio and managing files at the remote repository at GitHub.\n\n\n\nCreate a GitHub account\nCreate GitHub repository from a template repository\nCheck that Git is setup in RStudio\nConfigure Git for R, within R/RStudio (a familiar context)\n\nCreate a Personal Access Token (PAT)\nSet your Git Credentials (using your PAT)\n\n\nWarning: Do not try to create an RStudio version control project from a repo before completing these steps.\nFollow steps below to complete.",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -1322,7 +1418,7 @@
     "href": "modules/project_management/setting_up_git_and_github.html#overview",
     "title": "Project Management 01: Setting Up Git and GitHub for R",
     "section": "",
-    "text": "We will perform all the necessary tasks for using Git with RStudio and managing files at the remote repository at GitHub.\n\n\n\nCreate a GitHub account\nCreate GitHub repository named \"dataviz-exercises\" from a template repository\nCheck that Git is setup in RStudio\nConfigure Git for R, within R/RStudio (a familiar context)\n\nCreate a Personal Access Token (PAT)\nSet your Git Credentials (using your PAT)\n\n\nWarning: Do not try to create an RStudio version control project from a repo before completing these steps.\nFollow steps below to complete.",
+    "text": "We will perform all the necessary tasks for using Git with RStudio and managing files at the remote repository at GitHub.\n\n\n\nCreate a GitHub account\nCreate GitHub repository from a template repository\nCheck that Git is setup in RStudio\nConfigure Git for R, within R/RStudio (a familiar context)\n\nCreate a Personal Access Token (PAT)\nSet your Git Credentials (using your PAT)\n\n\nWarning: Do not try to create an RStudio version control project from a repo before completing these steps.\nFollow steps below to complete.",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -1374,7 +1470,7 @@
     "href": "modules/project_management/setting_up_git_and_github.html#creating-a-repository-on-github-using-a-template",
     "title": "Project Management 01: Setting Up Git and GitHub for R",
     "section": "Creating a Repository on GitHub Using a Template",
-    "text": "Creating a Repository on GitHub Using a Template\nYou will need to create a personal repository for class exercises. You can create it by building the directory structure for it yourself. This, however, may lead to errors. Creating a project from a template will ensure all students have they same repository with the same directory structure.\n\nOnce logged into your GitHub account, go to this template repository.\nOn the top right, you will see an option to create a Use this template. Click it an select “Create a new repository”.\nName the repository dataviz-exercises and provide a description like “for data viz class exercises and homework”.\n\n\n\n\n\n\n\n\n\n\n\nSelect the option to make the repository Private, check to add a README file, and add a .gitignore file by scrolling to find R:\n\n\n\n\n\n\n\n\n\n\n\nClick Create Repository\nWatch the course video if you have not already so that you know how to unpack the files for the repository as well as checking that Git is configured for RStudio.\n\nNote: Git manages files only, not directories. Directories will not populate in a repository unless they contain files. You will not see empty directories. For this reason, you may see empty files in the directory structure.",
+    "text": "Creating a Repository on GitHub Using a Template\nYou will need to create a personal repository for class exercises. You can create it by building the directory structure for it yourself. This, however, may lead to errors. Creating a project from a template will ensure all students have they same repository with the same directory structure.\n\nOnce logged into your GitHub account, go to this template repository.\nOn the top right, you will see an option to create a Use this template. Click it and select “Create a new repository”.\nName the repository cdvlab-exercises and provide a description like “for lab practice and exercises”.\n\n\n\n\n\n\n\n\n\n\n\nSelect the option to make the repository Private, check to add a README file, and add a .gitignore file by scrolling to find R:\n\n\n\n\n\n\n\n\n\n\n\nClick Create Repository\nWatch the course video if you have not already so that you know how to unpack the files for the repository as well as checking that Git is configured for RStudio.\n\nNote: Git manages files only, not directories. Directories will not populate in a repository unless they contain files. You will not see empty directories. For this reason, you may see empty files in the directory structure.",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -1452,7 +1548,7 @@
     "href": "modules/project_management/using_git_and_github.html",
     "title": "Project Management 02: R Projects, Git, and GitHub",
     "section": "",
-    "text": "This module focuses on getting organized. Rather than save files in a haphazard way that will just introduce stress to your life, we will focus on creating order. The best way to create order and stay organized is to 1) create projects in RStudio, 2) create directories and sub-directories that leave no ambiguity about where your files are, and 3) manage all directory paths and file paths simply using the {here} library. Another way is to connect that project with a remote repository saved someplace like GitHub for collaboration. In certain classes (and for your team project), you will use Git to interact with remote repositories connected to Projects in RStudio.\nIn order to maintain organization for this class and the project, you will set up a class folder (aka directory) on your computer. You will then create an RStudio project and connect it to a remote private repository on your GitHub account. The reason for its privacy is because of data related to certain exercises.\nYou will use this RStudio project for all class exercises and homework so that there is no ambiguity about where your files are saved. Finally, you will create directories within your new project directory so that you have an organized directory structure for storing your files. Systems paths for project files and directories will be manage using the {here} library. This process will also ensure that each student’s computer is configured in the same manner.\nReading through these steps, however, will facilitate your ability to apply the concepts and run the associated functions in class. Thus, all students will gain some basic experience with Git commands and a remote repository. Students will be collaborators of a repository for their team project. Coding leads will carry the responsibility of maintaining the organization of the team’s private repository.",
+    "text": "This module focuses on getting organized. Rather than save files in a haphazard way that will just introduce stress to your life, we will focus on creating order. There are 3 main ways to create order and stay organized:\n\n1) create projects in RStudio\n2) create directories and sub-directories that leave no ambiguity about where your files are, and\n3) manage all directory paths and file paths simply using the {here} library\n4) user lowercase for files names and replaces spaces with hyphens or underscores\n\nAnother way is to connect that project with a remote repository saved someplace like GitHub for collaboration. You will use Git to interact with remote repositories connected to Projects in RStudio.\nIn order to maintain organization for data projects, you will set up a lab (aka directory) on your computer, ideally where you will always know where to look. You will then create an RStudio project and connect it to a remote private repository associated with your GitHub account. The reason for its privacy is because of data related to certain exercises.\nYou will use this RStudio project for all exercises  so that there is no ambiguity about where your files are saved. Finally, you will create directories within your new project directory so that you have an organized directory structure for storing your files. Systems paths for project files and directories will be manage using the {here} library. This process will also ensure that each student’s computer is configured in the same manner.\nReading through these steps, however, will facilitate your ability to apply the concepts and run the associated functions. Thus, all RAs will gain some basic experience with Git commands and with communicating with a remote repository. RAs will be collaborators of a repository for certain projects.",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -1465,7 +1561,7 @@
     "href": "modules/project_management/using_git_and_github.html#overview",
     "title": "Project Management 02: R Projects, Git, and GitHub",
     "section": "",
-    "text": "This module focuses on getting organized. Rather than save files in a haphazard way that will just introduce stress to your life, we will focus on creating order. The best way to create order and stay organized is to 1) create projects in RStudio, 2) create directories and sub-directories that leave no ambiguity about where your files are, and 3) manage all directory paths and file paths simply using the {here} library. Another way is to connect that project with a remote repository saved someplace like GitHub for collaboration. In certain classes (and for your team project), you will use Git to interact with remote repositories connected to Projects in RStudio.\nIn order to maintain organization for this class and the project, you will set up a class folder (aka directory) on your computer. You will then create an RStudio project and connect it to a remote private repository on your GitHub account. The reason for its privacy is because of data related to certain exercises.\nYou will use this RStudio project for all class exercises and homework so that there is no ambiguity about where your files are saved. Finally, you will create directories within your new project directory so that you have an organized directory structure for storing your files. Systems paths for project files and directories will be manage using the {here} library. This process will also ensure that each student’s computer is configured in the same manner.\nReading through these steps, however, will facilitate your ability to apply the concepts and run the associated functions in class. Thus, all students will gain some basic experience with Git commands and a remote repository. Students will be collaborators of a repository for their team project. Coding leads will carry the responsibility of maintaining the organization of the team’s private repository.",
+    "text": "This module focuses on getting organized. Rather than save files in a haphazard way that will just introduce stress to your life, we will focus on creating order. There are 3 main ways to create order and stay organized:\n\n1) create projects in RStudio\n2) create directories and sub-directories that leave no ambiguity about where your files are, and\n3) manage all directory paths and file paths simply using the {here} library\n4) user lowercase for files names and replaces spaces with hyphens or underscores\n\nAnother way is to connect that project with a remote repository saved someplace like GitHub for collaboration. You will use Git to interact with remote repositories connected to Projects in RStudio.\nIn order to maintain organization for data projects, you will set up a lab (aka directory) on your computer, ideally where you will always know where to look. You will then create an RStudio project and connect it to a remote private repository associated with your GitHub account. The reason for its privacy is because of data related to certain exercises.\nYou will use this RStudio project for all exercises  so that there is no ambiguity about where your files are saved. Finally, you will create directories within your new project directory so that you have an organized directory structure for storing your files. Systems paths for project files and directories will be manage using the {here} library. This process will also ensure that each student’s computer is configured in the same manner.\nReading through these steps, however, will facilitate your ability to apply the concepts and run the associated functions. Thus, all RAs will gain some basic experience with Git commands and with communicating with a remote repository. RAs will be collaborators of a repository for certain projects.",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -1478,7 +1574,7 @@
     "href": "modules/project_management/using_git_and_github.html#libraries-used",
     "title": "Project Management 02: R Projects, Git, and GitHub",
     "section": "Libraries Used",
-    "text": "Libraries Used\n\n{usethis}: 2.2.3: for project workflow automation\n{gitcreds}: 0.1.2: for querying git credentials\n{gh}: 1.4.1: for querying the github api\n{gert}: 2.0.1: optional R library approach for git commands\n\n\nReadings and Preparation\nBefore Class: First, watch course videos (and/or read) to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.\nComplete the items in the To Do: Steps of the Task section.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.\n\n\nWarning\nDo not try to cheat the system and jump ahead. If you do, just like playing the Monopoly board game, your chance card may read “Go to jail. Go directly to jail. Do not pass go. Do not collect $200.” In other words, you cannot complete these steps without ensuring that your credentials are set. You will run into errors and try to contact me. If the following code does not return information for your login, your github account, scopes, and a token, you will be unable to proceed. If it does but your token is expired, you cannot proceed. Ensure you have set your credentials.\ngh::gh_whoami()\n\n\nTo Do: Steps of the Task\nFollowing the sections below, you will:\n\nCreate a Version-Control Project with RStudio\n\n\nName it dataviz-exercises (for class exercises and your homework)\n\n\nMake file edits, stage those edits, and commit them\nPush commits to GitHub\n\nIn class, we will practice using RStudio along with some simple Git commands for adding, committing, and pushing files.",
+    "text": "Libraries Used\n\n{usethis}: 2.2.3: for project workflow automation\n{gitcreds}: 0.1.2: for querying git credentials\n{gh}: 1.4.1: for querying the github api\n{gert}: 2.0.1: optional R library approach for git commands\n\n\n\nWarning\nDo not try to cheat the system and jump ahead. If you do, just like playing the Monopoly board game, your chance card may read “Go to jail. Go directly to jail. Do not pass go. Do not collect $200.” In other words, you cannot complete these steps without ensuring that your credentials are set. You will run into errors and try to contact me. If the following code does not return information for your login, your github account, scopes, and a token, you will be unable to proceed. If it does but your token is expired, you cannot proceed. Ensure you have set your credentials.\ngh::gh_whoami()\n\n\nTo Do: Steps of the Task\nFollowing the sections below, you will:\n\nCreate a Version-Control Project with RStudio\n\n\nName it cdvlab-exercises (for exercises and practice)\n\n\nMake file edits, stage those edits, and commit them\nPush commits to GitHub\n\nIn workshops or for data projects, we will use RStudio along with some simple Git commands for adding, committing, and pushing files.",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -1487,11 +1583,11 @@
     ]
   },
   {
-    "objectID": "modules/project_management/using_git_and_github.html#creating-a-local-directory-for-class",
-    "href": "modules/project_management/using_git_and_github.html#creating-a-local-directory-for-class",
+    "objectID": "modules/project_management/using_git_and_github.html#creating-a-local-directory-for-all-data-projects",
+    "href": "modules/project_management/using_git_and_github.html#creating-a-local-directory-for-all-data-projects",
     "title": "Project Management 02: R Projects, Git, and GitHub",
-    "section": "Creating a Local Directory for Class",
-    "text": "Creating a Local Directory for Class\nCreate a folder (aka directory) named \"dataviz\" (yes, all lowercase) on your computer. I recommend creating the directory someplace where you might not accidentally delete it. Create only one so as not to confuse yourself.",
+    "section": "Creating a Local Directory for all Data Projects",
+    "text": "Creating a Local Directory for all Data Projects\nI recommend creating a folder (aka directory) on your computer for managing all or your data-related activities. Such a directory makes finding your projects easy. Name it \"data\" (yes, all lowercase). I recommend creating the directory someplace where you might not accidentally delete it. Create only one so as not to confuse yourself.",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -1504,20 +1600,7 @@
     "href": "modules/project_management/using_git_and_github.html#connecting-the-repository-to-an-rstudio-project",
     "title": "Project Management 02: R Projects, Git, and GitHub",
     "section": "Connecting the Repository to an RStudio Project",
-    "text": "Connecting the Repository to an RStudio Project\nYou should already have a repository on GitHub named “dataviz-exercises” which you created from this template repository. You will now create an RStudio project and connect it to that remote repository on your GitHub account.\nWhen you create the project inside your class directory, your directory structure will look like this:\n└── dataviz\n│   └── dataviz-exercises \n\nIn RStudio, File &gt; New Project &gt; Version Control &gt; Git.\nIn the pop-up, you will see a request for the “repository URL”. Paste the URL of the GitHub repository. This URL will be the same as what you see on your GitHub account. However, we need to add .git to the end of it.\n\n    https://github.com/&lt;your_github_username&gt;/dataviz-exercises.git\n\nWhen you create the project, a directory will be created as a sub-directory of your main /dataviz directory. Thus, you will see /dataviz/dataviz-exercises.\n\nWARNING: Do not create the project inside of an existing project’s directory.\nNote: I recommend that you also select “Open in new session” in order to compartmentalize projects. When you work on the team project, open the project. When you work on your homework or other class exercises, open your homework project.\n\nClick “Create Project” to create the new project directory, which will create:\n\na project directory on your computer\na project file with file extension .Rproj\na Git repository or link to the remote GitHub repository for the project (also an RStudio Project)\n\n\nIf the repository already exists on GitHub (and it does in this instance) you should see RStudio flash a connection to GitHub and likely pull the repo contents down to your newly-created project directory. In this case, however, your local Git repository on RStudio will contain few files.",
-    "crumbs": [
-      "**Modules**",
-      "<b>Modules</b>",
-      "<b>Project Management</b>",
-      "**Project Management 02**: R Projects, Git, and GitHub"
-    ]
-  },
-  {
-    "objectID": "modules/project_management/using_git_and_github.html#unzipping-the-directory-structure",
-    "href": "modules/project_management/using_git_and_github.html#unzipping-the-directory-structure",
-    "title": "Project Management 02: R Projects, Git, and GitHub",
-    "section": "Unzipping the Directory Structure",
-    "text": "Unzipping the Directory Structure\nAlthough building the directory structure on your own is possible, the repository has a .zip file which contains all of the directories needed for the project. You can unzip them manually or do this in RStudio with the \"unzip_compressed_file.R\" script. The script has not been tested on a Mac so there may be an error.",
+    "text": "Connecting the Repository to an RStudio Project\nYou should already have a repository on GitHub named “cdvlab-exercises” which you created from this template repository. You will now create an RStudio project and connect it to that remote repository on your GitHub account.\nWhen you create the project inside your class directory, your directory structure will look like this:\n└── data\n│   └── cdvlab-exercises \n\nIn RStudio, File &gt; New Project &gt; Version Control &gt; Git.\nIn the pop-up, you will see a request for the “repository URL”. Paste the URL of the GitHub repository. This URL will be the same as what you see on your GitHub account. However, we need to add .git to the end of it.\n\n    https://github.com/&lt;your_github_username&gt;/cdvlab-exercises.git\n\nWhen you create the project, a directory will be created as a sub-directory of your main /data directory. Thus, you will see /data/cdvlab-exercises.\n\nWARNING: Do not create the project inside of an existing project’s directory.\nNote: I recommend that you also select “Open in new session” in order to compartmentalize projects. When you work on the team project, open the project. When you work on your homework or other class exercises, open your homework project.\n\nClick “Create Project” to create the new project directory, which will create:\n\na project directory on your computer\na project file with file extension .Rproj\na Git repository or link to the remote GitHub repository for the project (also an RStudio Project)\n\n\nIf the repository already exists on GitHub (and it does in this instance) you should see RStudio flash a connection to GitHub and likely pull the repo contents down to your newly-created project directory. In this case, however, your local Git repository on RStudio will contain few files.",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -1530,7 +1613,7 @@
     "href": "modules/project_management/using_git_and_github.html#understanding-the-directory-structure",
     "title": "Project Management 02: R Projects, Git, and GitHub",
     "section": "Understanding the Directory Structure",
-    "text": "Understanding the Directory Structure\nDirectory structures are used for organization. Each directory and sub directory has a purpose, which is to contain files of a certain type. As long as you know what the goal of the file is, you know where to save it. When working with teams, this common language avoids many problems.\nAlthough there are different ways to create project directory structures and different ways to name those directories, we will use the following structure. Not all directories will be used for all types of projects.\nInside your /dataviz/dataviz-exercises directory your full project directory structure should look like the one below.\n└── data\n│   └── interim \n│   ├── processed\n│   └── raw\n├── dataviz-exercises.Rproj (the R project file)\n├── docs\n├── .gitignore              (a version-control gitignore file)\n├── README.md               (a read me file)\n├── refs\n└── reports\n│   ├── figs\n│   └── images\n└── src\n│   ├── data\n│   ├── figs\n│   ├── functions\n│   └── utils\n\nDirectory and Sub-Directory Purpose\nThe purpose of each directory and sub-directory is explained following the structure.\n\n/data: for raw/virgin data files and modified data files\n/docs: for document files like the project description, any dictionary of variable names, etc.\n/refs: for references, papers, reading materials, and other document\n/report: for R Markdown (e.g., .Rmd) report files and their output file types (e.g., .docx, .pdf, .html)\n/src: for all source code related files (e.g., .R scripts, functions, .py files, etc.). General scripts can be saved in the top level /src but most of your script files will be saved in /src/figs because you will create figures\n\nMore directory descriptions are provided below.\nData Files\nInside /data, add the following sub-directories:\n\n/raw, for /data/raw/: containing raw data files obtained from sources (e.g., .csv, .tsv, .xlxs)\n/interim, for /data/interim/: .Rds (highly recommended) files containing intermediate transformed data; cleaned, merged, etc. but not processed fully to be in final form\n/processed, for /data/processed/; .Rds (highly recommended) files containing finalized data (e.g., aggregated, summaries, and data frames ready for plotting\n\nNOTE: For this course, you will see me write data as .Rds files using the saveRDS() function because this format will preserve variable formatting which will affect plots.\nWARNING: If you process and save those data files as .csv, .xlsx, or similar, you will likely find yourself working harder by recoding solutions you have already performed. I do not recommend this except for final versions that no longer require processing.\nSource/Code Files\nInside /src, add the following sub-directories:\n\n/data, for /src/data/: containing .R scripts needed to download or generate data\n/figs, for /src/figs/: containing .R scripts needed to create visualizations\n/functions, for /src/functions/: containing all .R functions needed that do not belong to libraries\n\nFiles for Reports\nInside /report, add the following sub-directories:\n\n/figs for /report/figs/: containing visualization files (e.g., .png) for the report\n/images for /report/images/: containing image files (e.g., .png) for the report\n\nWhen testing your plots, you may wish to add notes or other written content that you can use in conjunction with your plots. In such cases, I recommend creating R Markdown files with meaningful names for taking notes. You can save these reports in the top-level of /report and then source your .R figure script\nBelow are examples of an .R script for creating your visualizations and an .Rmd file that reads the .R script and renders the .png file within it. These files are also located under the Example Files & Other course tab. Your team report will utilize this same structure, though details and files will be also located under the Project course tab.\n\nexample-rmarkdown-file-with-fig-script.Rmd\nexample-figure-script.R\n\nMoving forward, save all data to their relevant sub-directories within /data; create all .R code files and scripts in files in /src, including scripts use to create your visualizations and .png plot files; create all exercise or homework R Markdown files (e.g., .Rmd) in /report. Finally, any readings or references can can saved in /refs and any other document files can be saved in /docs. Reserve /report/figs for writing/saving plots or figures. All paths to directories and files for reading and writing files will be managed using the {here} library.",
+    "text": "Understanding the Directory Structure\nDirectory structures are used for organization. Each directory and sub directory has a purpose, which is to contain files of a certain type. As long as you know what the goal of the file is, you know where to save it. When working with teams, this common language avoids many problems.\nAlthough there are different ways to create project directory structures and different ways to name those directories, we will use the following structure. Not all directories will be used for all types of projects.\nInside your /data/cdvlab-exercises directory your full project directory structure should look like the one below.\n└── data/\n│   └── interim/ \n│   ├── processed/\n│   └── raw/\n├── cdvlab-exercises.Rproj (the R project file)\n├── docs/\n├── .gitignore              (a version-control gitignore file)\n├── README.md               (a read me file)\n├── refs/\n├── requirements.R\n├── requirements.txt\n└── reports/\n│   ├── figs/\n│   └── images/\n└── src/\n│   ├── data/\n│   ├── figs/\n│   ├── functions/\n│   └── utils/\n\nDirectory and Sub-Directory Purpose\nThe purpose of each directory and sub-directory is explained following the structure.\n\ndata/: for raw/virgin data files and modified data files\ndocs/: for document files like the project description, any dictionary of variable names, etc.\nrefs/: for references, papers, reading materials, and other document\nreport/: for R Markdown (e.g., .Rmd) report files and their output file types (e.g., .docx, .pdf, .html)\nsrc/: for all source code related files (e.g., .R scripts, functions, .py files, etc.). General scripts can be saved in the top level src/ but most of your script files will be saved in src/figs/ because you will create figures\n\nMore directory descriptions are provided below.\nData Files\nInside data/, add the following sub-directories:\n\nraw/, for data/raw/: containing raw data files obtained from sources (e.g., .csv, .tsv, .xlxs)\ninterim/, for data/interim/: .Rds (highly recommended) files containing intermediate transformed data; cleaned, merged, etc. but not processed fully to be in final form\nprocessed/, for data/processed/; .Rds (highly recommended) files containing finalized data (e.g., aggregated, summaries, and data frames ready for plotting\n\nNOTE: For the lab, you will see me write data as .Rds files using the saveRDS() function because this file format will preserve variable formatting and reduce redoing work later. There are other ways of handling this with {dplyr} functions but I find saveRDS() is the most straightforward.\nWARNING: If you process and save those data files as .csv, .xlsx, or similar, you will likely find yourself working harder by recoding solutions you have already performed. I do not recommend this except for final versions that no longer require processing.\nSource/Code Files\nInside src/, add the following sub-directories:\n\ndata, for src/data/: containing .R scripts needed to download or generate data\nfigs/, for src/figs/: containing .R scripts needed to create visualizations\nfunctions/, for src/functions/: containing all .R functions needed that do not belong to libraries\n\nFiles for Reports\nInside report/, add the following sub-directories:\n\nfigs/ for report/figs/: containing visualization files (e.g., .png) for the report\nimages/ for report/images/: containing image files (e.g., .png) for the report\n\nWhen testing your plots, you may wish to add notes or other written content that you can use in conjunction with your plots. In such cases, I recommend creating R Markdown files with meaningful names for taking notes. You can save these reports in the top-level of /report and then source your .R figure script\nBelow are examples of an .R script for creating your visualizations and an .Rmd file that reads the .R script and renders the .png file within it. These files are also located under the Example Files & Other course tab. Your team report will utilize this same structure, though details and files will be also located under the Project course tab.\n\nexample-rmarkdown-file-with-fig-script.Rmd\nexample-figure-script.R\n\nMoving forward, save all data to their relevant sub-directories within /data; create all .R code files and scripts in files in /src, including scripts use to create your visualizations and .png plot files; create all exercise or homework R Markdown files (e.g., .Rmd) in /report. Finally, any readings or references can can saved in /refs and any other document files can be saved in /docs. Reserve /report/figs for writing/saving plots or figures. All paths to directories and files for reading and writing files will be managed using the {here} library.",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
