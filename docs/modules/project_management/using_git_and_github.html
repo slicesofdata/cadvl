@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2025-02-20">
+<meta name="dcterms.date" content="2025-02-21">
 
 <title>Project Management 02: R Projects, Git, and GitHub</title>
 <style>
@@ -377,7 +377,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../modules/syllabus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC197A/B: Directed Research Syllabus</span></a>
+ <span class="menu-text"><b>PSYC197A/B: Directed Research Syllabus</b></span></a>
   </div>
 </li>
       </ul>
@@ -432,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 20, 2025</p>
+      <p class="date">February 21, 2025</p>
     </div>
   </div>
   
@@ -545,55 +545,57 @@ Although building the directory structure on your own is possible, the repositor
 <p>Directory structures are used for organization. Each directory and sub directory has a purpose, which is to contain files of a certain type. As long as you know what the goal of the file is, you know where to save it. When working with teams, this common language avoids many problems.</p>
 <p>Although there are different ways to create project directory structures and different ways to name those directories, we will use the following structure. Not all directories will be used for all types of projects.</p>
 <p>Inside your <code>/data/cdvlab-exercises</code> directory your full project directory structure should look like the one below.</p>
-<pre><code>└── data
-│   └── interim 
-│   ├── processed
-│   └── raw
+<pre><code>└── data/
+│   └── interim/ 
+│   ├── processed/
+│   └── raw/
 ├── cdvlab-exercises.Rproj (the R project file)
-├── docs
+├── docs/
 ├── .gitignore              (a version-control gitignore file)
 ├── README.md               (a read me file)
-├── refs
-└── reports
-│   ├── figs
-│   └── images
-└── src
-│   ├── data
-│   ├── figs
-│   ├── functions
-│   └── utils</code></pre>
+├── refs/
+├── requirements.R
+├── requirements.txt
+└── reports/
+│   ├── figs/
+│   └── images/
+└── src/
+│   ├── data/
+│   ├── figs/
+│   ├── functions/
+│   └── utils/</code></pre>
 <section id="directory-and-sub-directory-purpose" class="level3">
 <h3 class="anchored" data-anchor-id="directory-and-sub-directory-purpose"><strong>Directory and Sub-Directory Purpose</strong></h3>
 <p>The purpose of each directory and sub-directory is explained following the structure.</p>
 <ul class="incremental">
-<li><code>/data</code>: for raw/virgin data files and modified data files</li>
-<li><code>/docs</code>: for document files like the project description, any dictionary of variable names, etc.</li>
-<li><code>/refs</code>: for references, papers, reading materials, and other document</li>
-<li><code>/report</code>: for R Markdown (e.g., <code>.Rmd</code>) report files and their output file types (e.g., <code>.docx</code>, <code>.pdf</code>, <code>.html</code>)</li>
-<li><code>/src</code>: for all source <em>code</em> related files (e.g., <code>.R</code> scripts, functions, <code>.py</code> files, etc.). General scripts can be saved in the top level <code>/src</code> but most of your script files will be saved in <code>/src/figs</code> because you will create figures</li>
+<li><code>data/</code>: for raw/virgin data files and modified data files</li>
+<li><code>docs/</code>: for document files like the project description, any dictionary of variable names, etc.</li>
+<li><code>refs/</code>: for references, papers, reading materials, and other document</li>
+<li><code>report/</code>: for R Markdown (e.g., <code>.Rmd</code>) report files and their output file types (e.g., <code>.docx</code>, <code>.pdf</code>, <code>.html</code>)</li>
+<li><code>src/</code>: for all source <em>code</em> related files (e.g., <code>.R</code> scripts, functions, <code>.py</code> files, etc.). General scripts can be saved in the top level <code>src/</code> but most of your script files will be saved in <code>src/figs/</code> because you will create figures</li>
 </ul>
 <p>More directory descriptions are provided below.</p>
 <p><strong>Data Files</strong></p>
-<p>Inside <code>/data</code>, add the following sub-directories:</p>
+<p>Inside <code>data/</code>, add the following sub-directories:</p>
 <ul class="incremental">
-<li><code>/raw</code>, for <code>/data/raw/</code>: containing raw data files obtained from sources (e.g., <code>.csv</code>, <code>.tsv</code>, <code>.xlxs</code>)</li>
-<li><code>/interim</code>, for <code>/data/interim/</code>: <code>.Rds</code> (highly recommended) files containing intermediate transformed data; cleaned, merged, etc. but not processed fully to be in final form</li>
-<li><code>/processed</code>, for <code>/data/processed/</code>; <code>.Rds</code> (highly recommended) files containing finalized data (e.g., aggregated, summaries, and data frames ready for plotting</li>
+<li><code>raw/</code>, for <code>data/raw/</code>: containing raw data files obtained from sources (e.g., <code>.csv</code>, <code>.tsv</code>, <code>.xlxs</code>)</li>
+<li><code>interim/</code>, for <code>data/interim/</code>: <code>.Rds</code> (highly recommended) files containing intermediate transformed data; cleaned, merged, etc. but not processed fully to be in final form</li>
+<li><code>processed/</code>, for <code>data/processed/</code>; <code>.Rds</code> (highly recommended) files containing finalized data (e.g., aggregated, summaries, and data frames ready for plotting</li>
 </ul>
 <p><strong>NOTE:</strong> For the lab, you will see me write data as <code>.Rds</code> files using the <code>saveRDS()</code> function because this file format will preserve variable formatting and reduce redoing work later. There are other ways of handling this with <code>{dplyr}</code> functions but I find <code>saveRDS()</code> is the most straightforward.</p>
 <p><strong>WARNING:</strong> If you process and save those data files as <code>.csv</code>, <code>.xlsx</code>, or similar, you will likely find yourself working harder by recoding solutions you have already performed. I do not recommend this except for final versions that no longer require processing.</p>
 <p><strong>Source/Code Files</strong></p>
-<p>Inside <code>/src</code>, add the following sub-directories:</p>
+<p>Inside <code>src/</code>, add the following sub-directories:</p>
 <ul class="incremental">
-<li><code>/data</code>, for <code>/src/data/</code>: containing <code>.R</code> scripts needed to download or generate data</li>
-<li><code>/figs</code>, for <code>/src/figs/</code>: containing <code>.R</code> scripts needed to create visualizations</li>
-<li><code>/functions</code>, for <code>/src/functions/</code>: containing all <code>.R</code> functions needed that do not belong to libraries</li>
+<li><code>data</code>, for <code>src/data/</code>: containing <code>.R</code> scripts needed to download or generate data</li>
+<li><code>figs/</code>, for <code>src/figs/</code>: containing <code>.R</code> scripts needed to create visualizations</li>
+<li><code>functions/</code>, for <code>src/functions/</code>: containing all <code>.R</code> functions needed that do not belong to libraries</li>
 </ul>
 <p><strong>Files for Reports</strong></p>
-<p>Inside <code>/report</code>, add the following sub-directories:</p>
+<p>Inside <code>report/</code>, add the following sub-directories:</p>
 <ul class="incremental">
-<li><code>/figs</code> for <code>/report/figs/</code>: containing visualization files (e.g., <code>.png</code>) for the report</li>
-<li><code>/images</code> for <code>/report/images/</code>: containing image files (e.g., <code>.png</code>) for the report</li>
+<li><code>figs/</code> for <code>report/figs/</code>: containing visualization files (e.g., <code>.png</code>) for the report</li>
+<li><code>images/</code> for <code>report/images/</code>: containing image files (e.g., <code>.png</code>) for the report</li>
 </ul>
 <p>When testing your plots, you may wish to add notes or other written content that you can use in conjunction with your plots. In such cases, I recommend creating R Markdown files with meaningful names for taking notes. You can save these reports in the top-level of <code>/report</code> and then source your <code>.R</code> figure script</p>
 <p>Below are examples of an <code>.R</code> script for creating your visualizations and an <code>.Rmd</code> file that reads the .R script and renders the <code>.png</code> file within it. These files are also located under the <strong>Example Files &amp; Other</strong> course tab. Your team report will utilize this same structure, though details and files will be also located under the <a href="https://gabrielcook.xyz/dataviz24/project"><strong>Project</strong></a> course tab.</p>
