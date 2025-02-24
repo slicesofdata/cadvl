@@ -539,7 +539,7 @@
     "href": "modules/introduction_to_r_rstudio_and_rmarkdown.html",
     "title": "Introduction to RStudio, R Markdown, & Functions",
     "section": "",
-    "text": "Under construction.\n\n\n\nThis page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.",
+    "text": "In this module, we familiarize ourselves with using R in RStudio as well as create files that contain both text and R using R Markdown\n\n\nBefore Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.\n\n\n\n\n\n\n\n{here} 1.0.1: for file path management\n{rmarkdown} 2.27: for creating markdown files",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -550,20 +550,8 @@
     "objectID": "modules/introduction_to_r_rstudio_and_rmarkdown.html#readings-and-preparation",
     "href": "modules/introduction_to_r_rstudio_and_rmarkdown.html#readings-and-preparation",
     "title": "Introduction to RStudio, R Markdown, & Functions",
-    "section": "Readings and Preparation",
-    "text": "Readings and Preparation\nBefore Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.",
-    "crumbs": [
-      "**Modules**",
-      "<b>Modules</b>",
-      "<b>Introduction to RStudio, R Markdown, & Functions</b>"
-    ]
-  },
-  {
-    "objectID": "modules/introduction_to_r_rstudio_and_rmarkdown.html#supplementary-readings",
-    "href": "modules/introduction_to_r_rstudio_and_rmarkdown.html#supplementary-readings",
-    "title": "Introduction to RStudio, R Markdown, & Functions",
-    "section": "Supplementary Readings",
-    "text": "Supplementary Readings",
+    "section": "",
+    "text": "Before Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -574,8 +562,8 @@
     "objectID": "modules/introduction_to_r_rstudio_and_rmarkdown.html#libraries",
     "href": "modules/introduction_to_r_rstudio_and_rmarkdown.html#libraries",
     "title": "Introduction to RStudio, R Markdown, & Functions",
-    "section": "Libraries",
-    "text": "Libraries\n\n{here} 1.0.1: for file path management\n{rmarkdown} 2.27: for creating markdown files",
+    "section": "",
+    "text": "{here} 1.0.1: for file path management\n{rmarkdown} 2.27: for creating markdown files",
     "crumbs": [
       "**Modules**",
       "<b>Modules</b>",
@@ -1059,6 +1047,25 @@
     ]
   },
   {
+    "objectID": "modules/links.html",
+    "href": "modules/links.html",
+    "title": "Links",
+    "section": "",
+    "text": "Study Links:\n\nPlanning and Cognition - Shapes and Colors pm with green circle\n\nRoom Search:\n\navailability\nreserve",
+    "crumbs": [
+      "**Modules**",
+      "<b>Modules</b>",
+      "<b>Links</b>"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Nothing to see here"
+  },
+  {
     "objectID": "modules/index.html",
     "href": "modules/index.html",
     "title": "Modules",
@@ -1079,13 +1086,6 @@
       "**Modules**",
       "<b>Modules</b>"
     ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Nothing to see here"
   },
   {
     "objectID": "modules_setup/index.html",
